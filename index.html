@@ -1,0 +1,95 @@
+<!--CMPS3141-HCI - AS2-23S1
+Collaborators:
+Date: Sept.8.23
+ -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="https://get.mavo.io/mavo.css" />
+		<script src="index.js" type="module"></script>
+
+</head>
+<body>
+    <div class="container">
+	<center><h1>Interactive Font Property Demo</h1></center>
+    
+    <p>Welcome to my Interactive Demo. This page will hopefully help you get familarized with the CSS Property "<i><b>Font</b></i>".
+      Below are some of the properties you can implement to the "<i><b>Font</b></i>" using CSS. You can click the "<b>More</b>" button 
+     to learn more about each CSS property.
+    </p>
+    <center>
+    <p>Below is a field that will display all the changes you make to the font. Play around with the properites and don't forget to click on more to learn more about them!</p>
+    <p></center>
+        
+    </p>
+
+    <div id="app">
+        <div class="font-preview">
+            <p :style="fontStyle">This is a font preview</p>
+        </div>
+        
+
+        <div class="font-controls">
+            <label for="fontStyleSelect">Font-Style:</label>
+            <button onclick="fontStyle()">More</button>
+            <select id="fontStyleSelect" v-model="fontStyle.fontStyle">
+                <option value="normal">Normal</option>
+                <option value="italic">Italic</option>
+				<option value="oblique">Oblique</option>
+            </select>
+
+            <label for="fontVariantSelect">Font-Variant:</label>
+            <button onclick="fontVariant()">More</button>
+            <select id="fontVariantSelect" v-model="fontStyle.fontVariant">
+                <option value="normal">Normal</option>
+                <option value="small-caps">Small Caps</option>
+            </select>
+
+            <label for="fontWeightSelect">Font-Weight:</label>
+            <button onclick="fontWeight()">More</button>
+            <select id="fontWeightSelect" v-model="fontStyle.fontWeight">
+                <option value="normal">Normal</option>
+                <option value="bold">Bold</option>
+                <option value="700">700</option>
+            </select>
+
+           
+
+            <label for="lineHeightInput">Line-Height:</label>
+            
+            <input type="number" id="lineHeightInput" v-model="fontStyle.lineHeight">
+            <button onclick="lineHeight()">More</button>
+            
+             <label for="fontSizeInput">Font-Size:</label>
+            <input type="text" id="fontSizeInput" v-model="fontStyle.fontSize">
+            <button onclick="fontSize()">More</button>
+            </div>
+            <br>
+            <label for="fontFamilyInput">Font-Family:</label>
+            <input type="text" id="fontFamilyInput" v-model="fontStyle.fontFamily">
+            <button onclick="fontFamily()">More</button>
+            <br>
+
+           <center><h1>Now it's your turn to pratice!</h1></center>
+
+           <center><p>Write some code from what you learnt from the activity below and do some changes to the text using the font properties mentioned.</p></center>
+
+        
+			<div class="font-preview">
+				<p :style="userCSS">This is a font preview</p>
+			</div>
+	
+            <center><p>Remember to close each line of your code with ";" like you would do in your normal CSS code.</p></center>
+			<div class="font-controls">
+				<label for="cssCode">Custom CSS Code:</label>
+				<textarea id="cssCode" v-model="userCSS" rows="6" cols="150"></textarea>
+			</div>
+		</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
